@@ -10,7 +10,7 @@ class Solution:
             x = x//10
         if neg:
            b = -b
-        if b > -(2**31) and b < (2**31 -1):
+        if b > -(2**31) and b < ((2**31) - 1):
             return b
         return 0
         
