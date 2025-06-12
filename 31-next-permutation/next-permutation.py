@@ -27,4 +27,4 @@ class Solution:
                 nums[j] , nums[a] = nums[a] , nums[j]
                 break
 
-        nums[a+1:] = sorted(nums[a+1:])
+        nums[a+1:] = nums[:a:-1]
