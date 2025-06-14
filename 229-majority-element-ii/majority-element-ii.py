@@ -21,7 +21,6 @@ class Solution:
         n = len(nums)
         ans = []
         while(j < n):
-
             if nums[i] != nums[j]:
                 if j-i > n/3:
                     ans.append(nums[i])
