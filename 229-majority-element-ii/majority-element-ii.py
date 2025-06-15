@@ -37,6 +37,8 @@ class Solution:
         #     j+=1
         # if j-i > n/3:
         #     ans.append(nums[i])
+#---------------------------------------------------
+
 
         return ans
     
