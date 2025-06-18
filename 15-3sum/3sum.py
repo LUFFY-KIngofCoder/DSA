@@ -1,28 +1,48 @@
-__import__("atexit").register(lambda: open("display_runtime.txt", "w").write("0"))
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        ###T.C. = O(n^2 log(m))
+        # n = len(nums)
+        # ans = set()
+        # for i in range(n):
+        #     h =[]
+             
+        #     for j in range(i+1,n):
+        #         if -(nums[i] + nums[j]) in h:
+        #             a = [nums[i] ,-(nums[i] + nums[j]), nums[j]]
+        #             print(a)
+        #             t = tuple(sorted(a))
+        #             ans.add(t)
+                
+        #         h.append(nums[j])
+#--------------------------------------------------------------------------------------------
+
+
+        ###T.C. = O(nlogn) + O(N*N)     
+        ans = []
         nums.sort()
-        l=len(nums)
-        res=[]
-        s=set()
-        for i in range(l-2):
-            if i > 0 and nums[i] == nums[i-1]:
+        n = len(nums)
+
+        for i in range(n-2):
+            if i != 0 and nums[i] == nums[i - 1]:
                 continue
-            target=-1*nums[i]
-            #TWO-SUM
-            ls=i+1
-            rs=l-1
-            left=ls
-            right=rs
-            while(left<right):
-                curr=nums[left]+nums[right]
-                if(curr==target):
-                    if((nums[i],nums[left]) not in s):
-                        res.append([nums[i],nums[left],nums[right]])
-                        s.add((nums[i],nums[left]))
-                    left+=1
-                elif(curr>target):
-                    right-=1
+            
+            j = i+1
+            k = n-1
+            while(j<k):
+                total = nums[i]+nums[j]+nums[k]
+                if total == 0 :
+                    ans.append([nums[i],nums[j],nums[k]])
+                    j += 1
+                    k -= 1
+
+                    while nums[j] == nums[j-1] and j<k:
+                        j+=1
+                    while nums[k] == nums[k+1] and j <k:
+                        k-=1
+                elif total > 0:
+                    k-=1
                 else:
-                    left+=1
-        return res
+                    j+=1
+            
+        return ans
+
