@@ -14,7 +14,10 @@ class Solution:
         #             ans.add(t)
                 
         #         h.append(nums[j])
-        
+#--------------------------------------------------------------------------------------------
+
+
+        ###T.C. = O(nlogn) + O(N**2)     
         ans = []
         nums.sort()
         n = len(nums)
@@ -31,7 +34,7 @@ class Solution:
                     ans.append([nums[i],nums[j],nums[k]])
                     j += 1
                     k -= 1
-                    
+
                     while nums[j] == nums[j-1] and j<k:
                         j+=1
                     while nums[k] == nums[k+1] and j <k:
