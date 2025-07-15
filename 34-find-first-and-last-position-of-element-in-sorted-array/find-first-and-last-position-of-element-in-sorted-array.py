@@ -33,11 +33,11 @@ class Solution:
             if nums[mid] == target:
                 l = mid
                 r = mid
-                while l>=0 and nums[l] == target:
+                while l-1>=0 and nums[l-1] == target:
                     l-=1
-                while r<len(nums) and nums[r] == target:
+                while r+1<len(nums) and nums[r+1] == target:
                     r+=1
-                ans = [l+1,r-1]
+                ans = [l,r]
                 break
             elif nums[mid] > target:
                 r= mid-1
