@@ -16,7 +16,8 @@ class Solution:
                 if nums[l] > nums[r]:
                     l = mid+1
                 else:
-                    r = mid
+                    mid = l
+                    break
             mid=((l+r)//2)
             
         return nums[mid]
