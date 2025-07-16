@@ -4,12 +4,12 @@ class Solution:
         l = 0
         r = n-1
         ans = nums[0]
-        while l<=r:
+        while l<r:
             mid=((l+r)//2)
-            ans = nums[mid]
-            print(ans,l,r)
-            if l == r:
-                break
+            # ans = nums[mid]
+            # print(ans,l,r)
+            # if l == r:
+            #     break
             if nums[l] > nums[mid]:
                 r = mid
             else:
@@ -17,5 +17,6 @@ class Solution:
                     l = mid+1
                 else:
                     r = mid
+            ans = nums[(l+r)//2]
             
         return ans
