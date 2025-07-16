@@ -6,13 +6,16 @@ class Solution:
         ans = nums[0]
         while l<=r:
             mid=((l+r)//2)
-            ans = min(ans ,nums[mid])
+            ans = nums[mid]
+            print(ans,l,r)
+            if l == r:
+                break
             if nums[l] > nums[mid]:
-                r = mid-1
+                r = mid
             else:
                 if nums[l] > nums[r]:
                     l = mid+1
                 else:
-                    r = mid-1
-
+                    r = mid
+            
         return ans
