@@ -18,6 +18,5 @@ class Solution:
                 else:
                     r = mid
             mid=((l+r)//2)
-            ans = nums[mid]
             
-        return ans
+        return nums[mid]
