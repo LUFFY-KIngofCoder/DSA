@@ -4,8 +4,8 @@ class Solution:
         l = 0
         r = n-1
         ans = nums[0]
+        mid=((l+r)//2)
         while l<r:
-            mid=((l+r)//2)
             # ans = nums[mid]
             # print(ans,l,r)
             # if l == r:
@@ -17,6 +17,7 @@ class Solution:
                     l = mid+1
                 else:
                     r = mid
-            ans = nums[(l+r)//2]
+            mid=((l+r)//2)
+            ans = nums[mid]
             
         return ans
