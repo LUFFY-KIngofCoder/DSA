@@ -6,7 +6,7 @@ class Solution:
         ans = nums[0]
         while l<=r:
             mid=((l+r)//2)
-            ans = min(ans,nums[mid])
+            ans = min(ans ,nums[mid])
             if nums[l] > nums[mid]:
                 r = mid-1
             else:
