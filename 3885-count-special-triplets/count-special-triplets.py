@@ -14,14 +14,14 @@ class Solution:
             
             val = num*2
 
-            count += (right[val]%MOD) * (left[val]%MOD)
-            count %=MOD
+            count += (right[val]) * (left[val])
+            
 
             left[num]+=1
         
-        return count
+        return count%MOD
 
 
-        return count 
+
 
             
