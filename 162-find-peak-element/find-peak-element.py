@@ -19,17 +19,17 @@ class Solution:
                     r = mid-1
                 elif nums[mid] < nums[mid+1]:
                     l = mid+1
-                else:
-                    t = mid+2
-                    while nums[t] <= nums[mid] and t >=0:
-                        t-=1
-                    if t==-1:
-                        t = mid+2
-                        while nums[t] <= nums[mid] and t <n:
-                            t+=1
-                        l=t
-                    else:
-                        r = t
+                # else:
+                #     t = mid+2
+                #     while nums[t] <= nums[mid] and t >=0:
+                #         t-=1
+                #     if t==-1:
+                #         t = mid+2
+                #         while nums[t] <= nums[mid] and t <n:
+                #             t+=1
+                #         l=t
+                #     else:
+                #         r = t
 
             elif mid ==0:
                 if nums[mid] > nums[mid+1]:
