@@ -11,15 +11,14 @@ class Solution:
             
         l = 1
         r = max(piles)
-        ans = float('inf')
-        while l<=r:
+        mid = 0
+        while l<r:
             mid = (l+r)//2
-            print(mid,yn(piles,mid) , l, r)
-            if yn(piles,mid) <= h :
-                print(mid)
-                ans = min(ans,mid)
-                r= mid-1
-            elif yn(piles,mid) > h :
-                l = mid+1
             
-        return ans
+            if yn(piles,mid) <= h : 
+                r= mid
+
+            else:
+                l = mid+1
+       
+        return l
