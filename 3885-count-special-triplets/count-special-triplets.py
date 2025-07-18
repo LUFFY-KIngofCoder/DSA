@@ -15,7 +15,7 @@ class Solution:
             right[num]-=1
             
             val = num*2
-            
+
             count += (right[val]%MOD) * (left[val]%MOD)
             count %=MOD
 
