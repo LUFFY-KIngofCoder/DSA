@@ -1,0 +1,20 @@
+import math
+def isthreshold(nums,k,threshold):
+    s = 0
+    for i in nums:
+        s+=math.ceil(i/k)
+    return s <= threshold
+
+class Solution:
+    def smallestDivisor(self, nums: List[int], threshold: int) -> int:
+        
+        l = 1
+        r = max(nums)
+
+        while l<r:
+            mid = (l+r)//2
+            if isthreshold(nums,mid,threshold):
+                r = mid
+            else:
+                l = mid+1
+        return l
