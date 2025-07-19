@@ -1,5 +1,21 @@
 def result(nums, m, days):
     s = 0
+    d = 0
+    for i in range(len(nums)):
+        s += nums[i]
+        if s == m:
+            d+=1
+            s=0
+        elif s > m:
+            d+=1
+            s=nums[i]
+         
+    d += 1 if s != 0 else 0 
+    print(d)
+    return d <= days
+
+def result(nums, m, days):
+    s = 0
     d = 1
     for i in range(len(nums)):
         if s + nums[i] > m:
