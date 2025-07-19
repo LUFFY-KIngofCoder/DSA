@@ -27,41 +27,69 @@ def no_bouque1(nums, d,k): #okay
 
 class Solution:
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
-        if len(bloomDay) < m*k:
-            return -1
+#         if len(bloomDay) < m*k:
+#             return -1
         
-        l= min(bloomDay)
-        r = max(bloomDay)
-        flow = m*k
+#         l= min(bloomDay)
+#         r = max(bloomDay)
+#         flow = m*k
 
-        while l<r:
-            mid = (l+r)//2
-            print(l , r, mid, no_bouque1(bloomDay , mid,k))
-            if no_bouque(bloomDay , mid,k) >= m:
-                r = mid
+#         while l<r:
+#             mid = (l+r)//2
+#             print(l , r, mid, no_bouque1(bloomDay , mid,k))
+#             if no_bouque(bloomDay , mid,k) >= m:
+#                 r = mid
+#             else:
+#                 l=mid+1
+
+#         return l
+# #--------------------------------------------
+#         # val = m * k
+#         # n = len(bloomDay)  # size of the array
+#         # if val > n:
+#         #     return -1  # impossible case
+#         # # find maximum and minimum
+#         # mini = float('inf')
+#         # maxi = float('-inf')
+#         # for i in range(n):
+#         #     mini = min(mini, bloomDay[i])
+#         #     maxi = max(maxi, bloomDay[i])
+
+#         # # apply binary search
+#         # low = mini
+#         # high = maxi
+#         # while low <= high:
+#         #     mid = (low + high) // 2
+#         #     if possible(bloomDay, mid, m, k):
+#         #         high = mid - 1
+#         #     else:
+#         #         low = mid + 1
+#         # return low
+        if len(bloomDay) < m * k:
+            return -1
+        high = max(bloomDay)
+        low = min(bloomDay)
+        ans = high
+        def poss(nums, k, m, day):
+            cnt = 0
+            nobloom = 0
+            for i in range(len(nums)):
+                if nums[i] <= day:
+                    cnt += 1
+                else:
+                    nobloom += (cnt//k)
+                    cnt = 0
+            nobloom += (cnt//k)
+            if nobloom >= m:
+                return True
             else:
-                l=mid+1
+                return False     
 
-        return l
-#--------------------------------------------
-        # val = m * k
-        # n = len(bloomDay)  # size of the array
-        # if val > n:
-        #     return -1  # impossible case
-        # # find maximum and minimum
-        # mini = float('inf')
-        # maxi = float('-inf')
-        # for i in range(n):
-        #     mini = min(mini, bloomDay[i])
-        #     maxi = max(maxi, bloomDay[i])
-
-        # # apply binary search
-        # low = mini
-        # high = maxi
-        # while low <= high:
-        #     mid = (low + high) // 2
-        #     if possible(bloomDay, mid, m, k):
-        #         high = mid - 1
-        #     else:
-        #         low = mid + 1
-        # return low
+        while low<=high:
+            mid = (low+high) // 2
+            if poss(bloomDay, k, m, mid):
+                ans = min(ans, mid)
+                high = mid - 1
+            else:
+                low = mid + 1
+        return ans
