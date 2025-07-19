@@ -1,13 +1,10 @@
 import math
-def isthreshold(nums,k,threshold):
-    s = 0
-    for i in nums:
-        s+=math.ceil(i/k)
-    return s <= threshold
+def isthreshold(nums,k,threshold): 
+    return sum(math.ceil(i/k) for i in nums) <= threshold
+     
 
 class Solution:
-    def smallestDivisor(self, nums: List[int], threshold: int) -> int:
-        
+    def smallestDivisor(self, nums: List[int], threshold: int) -> int:    
         l = 1
         r = max(nums)
 
