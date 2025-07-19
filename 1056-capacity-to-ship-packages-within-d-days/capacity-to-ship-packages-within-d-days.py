@@ -1,18 +1,18 @@
-def result(nums, m, days):
-    s = 0
-    d = 0
-    for i in range(len(nums)):
-        s += nums[i]
-        if s == m:
-            d+=1
-            s=0
-        elif s > m:
-            d+=1
-            s=nums[i]
+# def result(nums, m, days):
+#     s = 0
+#     d = 0
+#     for i in range(len(nums)):
+#         s += nums[i]
+#         if s == m:
+#             d+=1
+#             s=0
+#         elif s > m:
+#             d+=1
+#             s=nums[i]
          
-    d += 1 if s != 0 else 0 
-    print(d)
-    return d <= days
+#     d += 1 if s != 0 else 0 
+#     print(d)
+#     return d <= days
 
 def result(nums, m, days):
     s = 0
@@ -24,7 +24,6 @@ def result(nums, m, days):
         else:
             s+=nums[i]
          
-    # d += 1 if s != 0 else 0 
     print(d)
     return d <= days
 
@@ -37,11 +36,11 @@ class Solution:
 
         l = max(weights)
 
-        while l<r:
+        while l<=r:
             mid = (l+r)//2    
             print(mid,l,r)
             if result(weights,mid,days):
-                r=mid
+                r=mid-1
             else:
                 l=mid+1
             
