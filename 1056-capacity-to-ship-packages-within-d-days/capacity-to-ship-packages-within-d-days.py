@@ -21,11 +21,11 @@ class Solution:
 
         l = max(weights)
 
-        while l<=r:
+        while l<r:
             mid = (l+r)//2    
             print(mid,l,r)
             if result(weights,mid,days):
-                r=mid-1
+                r=mid
             else:
                 l=mid+1
             
