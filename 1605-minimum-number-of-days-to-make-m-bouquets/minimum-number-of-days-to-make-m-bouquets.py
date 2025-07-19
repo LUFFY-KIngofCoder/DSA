@@ -18,7 +18,7 @@ class Solution:
         if len(bloomDay) < m*k:
             return -1
         
-        l= 1
+        l= min(bloomDay)
         r = max(bloomDay)
         flow = m*k
 
