@@ -20,5 +20,5 @@ class Solution:
         if r == -1:
             return k
 
-        ans = arr[r] + (k - (arr[r]- r-1))
+        ans =  k + r + 1         # arr[r] + (k - (arr[r]- r-1))
         return ans
