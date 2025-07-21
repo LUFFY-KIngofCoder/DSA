@@ -17,8 +17,6 @@ class Solution:
                 l = mid +1
             else:
                 r = mid-1
-        if r == -1:
-            return k
 
-        ans =  k + r + 1         # arr[r] + (k - (arr[r]- r-1))
+        ans =  k + r + 1  # arr[r] + (k - (arr[r]- r-1))
         return ans
