@@ -18,5 +18,5 @@ class Solution:
             else:
                 r = mid-1
 
-        ans =  k + r + 1  # arr[r] + (k - (arr[r]- r-1))
+        ans =  l + k  # k + r + 1  # arr[r] + (k - (arr[r]- r-1))
         return ans
