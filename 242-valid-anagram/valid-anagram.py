@@ -1,6 +1,7 @@
+from collections import Counter
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # return Counter(s) == Counter(t)
+        return Counter(s) == Counter(t)
 #--------------------------------------------------------
         n = len(s)
         m = len(t)
@@ -23,8 +24,8 @@ class Solution:
         #         return False
         # return True
 #--------------------------------------------------------
-        ss = set(s)
-        for i in s:
-            if s.count(i) != t.count(i):
-                return False
-        return True
+        # ss = set(s)
+        # for i in s:
+        #     if s.count(i) != t.count(i):
+        #         return False
+        # return True
