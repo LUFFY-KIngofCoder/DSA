@@ -1,8 +1,8 @@
 class Solution:
     def myAtoi(self, s: str) -> int:
-        # while len(s)>1 and s[0] == ' ':
-        #     s = s[1:]
-        s = s.strip()
+        while len(s)>1 and s[0] == ' ':
+            s = s[1:]
+        # s = s.strip()
         if s == '':
             return 0
         ans = '0'
