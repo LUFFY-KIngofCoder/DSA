@@ -10,6 +10,10 @@ class Solution:
         
         prev = None
         while head!=None:
-            head.next, prev, head = prev, head, head.next
+            # head.next, prev, head = prev, head, head.next
+            temp = head.next
+            head.next = prev
+            prev = head
+            head = temp
 
         return prev
