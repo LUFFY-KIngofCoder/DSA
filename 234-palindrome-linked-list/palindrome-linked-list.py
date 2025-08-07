@@ -3,6 +3,24 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
+
+def reversell(head):
+    if not head or not head.next:
+        return head
+    new_head = reversell(head.next)
+
+    front = head.next
+
+    front.next = head
+
+    head.next = None
+    
+    return new_head
+
+
+
+
+
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         # a = ""
@@ -24,16 +42,14 @@ class Solution:
             fast = fast.next
         slow = slow.next
         
-        a = None
-        while slow != None:
-            temp = slow.next
-            slow.next = a
-            a = slow
-            slow = temp
-        ans = True
-        while fast != None:
-            if head.val != fast.val:
+        first = head
+        new_head = reversell(slow)
+        second = new_head
+        print(first.val)
+        while second != None:
+            if first.val != second.val:
+                reversell(new_head)
                 return False
-            fast =fast.next
-            head = head.next
+            second =second.next
+            first = first.next
         return True
