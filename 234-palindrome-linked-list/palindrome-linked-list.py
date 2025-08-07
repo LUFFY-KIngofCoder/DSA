@@ -34,18 +34,15 @@ class Solution:
 
         slow,fast = head,head
 
-        while fast.next and fast.next.next:
+        while fast and fast.next:
             fast = fast.next.next
             slow = slow.next # reach middle of list
-
-        if fast.next!= None:
-            fast = fast.next
-        slow = slow.next
         
         first = head
         new_head = reversell(slow)
         second = new_head
-        print(first.val)
+
+
         while second != None:
             if first.val != second.val:
                 reversell(new_head)
