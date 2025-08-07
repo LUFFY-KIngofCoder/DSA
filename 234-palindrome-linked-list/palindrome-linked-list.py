@@ -45,7 +45,7 @@ class Solution:
 
         while second != None:
             if first.val != second.val:
-                reversell(new_head)
+                # reversell(new_head)
                 return False
             second =second.next
             first = first.next
