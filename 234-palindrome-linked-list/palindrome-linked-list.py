@@ -31,7 +31,7 @@ class Solution:
         #     return True
         # else:
         #     return False
-
+#-------------------------------------------------------
         slow,fast = head,head
 
         while fast and fast.next:
