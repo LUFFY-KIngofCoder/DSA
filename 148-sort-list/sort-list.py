@@ -6,6 +6,7 @@
 
 def mergesort(start , end):
     if start == end:
+        start.next = None
         return start
 
     slow,fast = start,start 
@@ -15,8 +16,8 @@ def mergesort(start , end):
         fast = fast.next.next
 
     rstart = slow.next
-    slow.next = None
-    end.next =None
+    # slow.next = None
+    # end.next =None
 
     lstart = mergesort(start , slow)
     rstart = mergesort(rstart , end) 
