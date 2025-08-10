@@ -18,13 +18,16 @@ class Solution:
         c = 0
         start = head = None
 
-        while a or b:
+        while a or b or c:
             if a and b:
                 val = a.val+b.val+c
+            elif not a and not b:
+                val = c
             elif not a:
                 val = b.val+c
             elif not b: 
                 val = a.val+c
+            
             print(val, val%10, val//10)
             if not head:
                 head = ListNode(val%10)
@@ -37,7 +40,7 @@ class Solution:
                 a = a.next
             if b:
                 b = b.next
-        if c!=0 :
-            head.next = ListNode(c)
+        # if c!=0 :
+        #     head.next = ListNode(c)
         return start
 
