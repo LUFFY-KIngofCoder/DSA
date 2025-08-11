@@ -16,31 +16,19 @@ class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         a , b = l1,l2
         c = 0
-        start = head = None
+        start = head = ListNode()
 
         while a or b or c:
-            if a and b:
-                val = a.val+b.val+c
-            elif not a and not b:
-                val = c
-            elif not a:
-                val = b.val+c
-            elif not b: 
-                val = a.val+c
-            
-            print(val, val%10, val//10)
-            if not head:
-                head = ListNode(val%10)
-                start = head
-            else:
-                head.next = ListNode(val%10)
-                head = head.next
+            v1 = a.val if a else 0
+            v2 = b.val if b else 0
+            val = v1+v2+c 
+            head.next = ListNode(val%10)
+            head = head.next
             c = val//10
-            if a:
-                a = a.next
-            if b:
-                b = b.next
+            a = a.next if a else None
+            b = b.next if b else None
+
         # if c!=0 :
         #     head.next = ListNode(c)
-        return start
+        return start.next
 
