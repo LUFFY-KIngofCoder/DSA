@@ -8,11 +8,12 @@
 
 class Solution:
     def myAtoi(self, s: str) -> int:
+        s = s.strip()
         if s == '':
             return 0
         # while len(s)>1 and s[0] == ' ':
         #     s = s[1:]
-        s = s[:-1].strip()+s[-1]
+        
         
         ans = '0'
         isneg = -1 if s[0] == '-' else 1
