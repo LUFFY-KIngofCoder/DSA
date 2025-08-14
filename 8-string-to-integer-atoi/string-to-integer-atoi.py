@@ -1,3 +1,11 @@
+# def atoi(s, i):
+#     if s == "":
+#         return 
+    
+#     atoi
+    
+#     return 
+
 class Solution:
     def myAtoi(self, s: str) -> int:
         if s == '':
