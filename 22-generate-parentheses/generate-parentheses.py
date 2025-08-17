@@ -4,7 +4,7 @@ def answer(s , ans, n,f,b):
         return 
     if f!= n:    
         answer(s+"(" , ans, n, f+1,b)
-    if f!= 0 and f!= b :
+    if b<f :
         answer(s+")" , ans, n, f,b+1)
 
     
