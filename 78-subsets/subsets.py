@@ -2,11 +2,11 @@ def answer(nums , ds,ans, i):
     if i == len(nums):
         ans.append(ds.copy())
         return
-    answer(nums,ds,ans,i+1)
+    
     ds.append(nums[i])
     answer(nums,ds,ans,i+1)
     ds.pop()    
-
+    answer(nums,ds,ans,i+1)
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
