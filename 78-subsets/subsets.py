@@ -1,19 +1,29 @@
-# def answer(nums , ds,ans):
-#     if len(nums) == len(ds):
-        
+def answer(nums , ds,ans, i):
+    if i == len(nums):
+        ans.append(ds.copy())
+        return
+    answer(nums,ds,ans,i+1)
+    ds.append(nums[i])
+    answer(nums,ds,ans,i+1)
+    ds.pop()    
 
 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        # ds = []
-        n = 1 << len(nums)
+        # n = 1 << len(nums)
 
-        ans= []
-        for i in range(n):
-            s = []
-            for j in range(len(nums)):
-                if (i & 1 << j):
-                    s.append(nums[j])
-            ans.append(s)
+        # ans= []
+        # for i in range(n):
+        #     s = []
+        #     for j in range(len(nums)):
+        #         if (i & 1 << j):
+        #             s.append(nums[j])
+        #     ans.append(s)
         
+        # return ans
+
+#---------------------------------
+        ds = []
+        ans = []
+        answer(nums,ds,ans,0)
         return ans
