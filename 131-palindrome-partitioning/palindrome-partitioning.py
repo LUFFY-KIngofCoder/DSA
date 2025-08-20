@@ -5,8 +5,7 @@ class Solution:
 
         def answer(i):
             if i == len(s):
-                if ds!= []:
-                    ans.append(ds.copy())
+                ans.append(ds.copy())
                 return
             for j in range(i,len(s)):
                 if s[i:j+1] == s[i:j+1][::-1]:
