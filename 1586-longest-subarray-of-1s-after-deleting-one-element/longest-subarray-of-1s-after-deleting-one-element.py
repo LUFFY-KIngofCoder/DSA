@@ -1,8 +1,8 @@
 class Solution:
     def longestSubarray(self, nums: List[int]) -> int:
-        if sum(nums) == 0:
+        if 1 not in nums:
             return 0
-        if sum(nums) == len(nums):
+        if 0 not in nums:
             return len(nums)-1
         
         ans = 0
