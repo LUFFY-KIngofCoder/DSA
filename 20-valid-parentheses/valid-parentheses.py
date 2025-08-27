@@ -6,7 +6,6 @@ class Stack:
 
     def push(self, x):
         self.Top+=1
-        print(self.Top,self.size)
         self.arr[self.Top] = x
         
 
