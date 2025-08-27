@@ -1,7 +1,7 @@
 class Stack:
     def __init__(self):
         self.Top = -1
-        self.size = 10**4+1
+        self.size = 10**4
         self.arr = [0]*self.size
 
     def push(self, x):
