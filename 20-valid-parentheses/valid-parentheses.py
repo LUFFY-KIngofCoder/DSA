@@ -29,16 +29,14 @@ class Stack:
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        c = [")" , "]", "}"]
-        o = ["(", "[","{"]
-        se = dict(zip(c,o))
+        se = {')': '(', ']': '[', '}': '{'}
         for i in s:
-            if i in o:
+            if i in se.values():
                 # stack.push(i)
                 stack.append(i)
 
             
-            elif i in c:
+            elif i in se.keys():
                 if stack == []:
                     return False
 
