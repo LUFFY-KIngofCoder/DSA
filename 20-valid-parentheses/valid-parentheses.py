@@ -37,22 +37,16 @@ class Solution:
                 # stack.push(i)
                 stack.append(i)
 
-            # elif stack.isEmpty():
-            elif stack == []:
-                return False
-                break
             
             elif i in c:
-            
+                if stack == []:
+                    return False
+
                 # if se[i] == stack.top():
                 if se[i] == stack[-1]:
                     stack.pop()
                 else:
                     return False
-                    break
-
+                    
         # if stack.isEmpty():
-        if stack == []:
-            return True
-        else:
-            return False
+        return not stack
