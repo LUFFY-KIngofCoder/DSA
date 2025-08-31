@@ -28,9 +28,9 @@ class Solution:
         st = Stack()
         n = len(nums)
         nge = [0]*n
-        ind = nums.index(max(nums))
-        print(ind)
-        for i in range(n+ind,-1,-1):
+        # ind = nums.index(max(nums))
+        # print(ind)
+        for i in range(2*n-1,-1,-1):
             i = i%n
             while not st.isEmpty() and st.top() <= nums[i]:
                 st.pop()
