@@ -25,18 +25,28 @@ class Solution:
         new_head = reversell(head)
         s  = new_head
         
-        prev = None
-        while n!=1:
-            n-=1
-            prev = new_head
-            new_head = new_head.next
+        # prev = None
+        # while n!=1:
+        #     n-=1
+        #     prev = new_head
+        #     new_head = new_head.next
         
-        print(new_head.val)
-        if prev == None:
+        # print(new_head.val)
+        # if prev == None:
+        #     s = new_head.next
+        # else:
+        #     prev.next = new_head.next
+        #     new_head.next = None
+        if n == 1:
             s = new_head.next
         else:
-            prev.next = new_head.next
-            new_head.next = None
+            n-=1
+            while n > 1:
+                new_head = new_head.next
+                n-=1
+            temp = new_head.next.next
+            new_head.next.next = None
+            new_head.next = temp
         
         head = reversell(s)
 
