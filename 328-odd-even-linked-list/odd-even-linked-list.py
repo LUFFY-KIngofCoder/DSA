@@ -14,8 +14,7 @@ class Solution:
             odd.next = even.next
             odd = odd.next
             even.next = odd.next
-            if even.next != None:
-                even = even.next
+            even = even.next
         # if even
     
         odd.next = s
