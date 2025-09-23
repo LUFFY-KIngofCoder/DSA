@@ -13,15 +13,18 @@ class Solution:
             n+=1
             count = count.next
         end = count
+
         k = k%n    
         
         if k == 0 :
             return head
 
-        move = n - (k%n)
+        move = n - k -1
+
         start = head
-        new_head = None 
-        while move-1 > 0:
+        new_head = None
+
+        while move > 0:
             head = head.next
             move-=1
         
