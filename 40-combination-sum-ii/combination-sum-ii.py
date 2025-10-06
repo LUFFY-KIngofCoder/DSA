@@ -29,10 +29,6 @@ class Solution:
                 print(ds)
                 return
 
-            if i == len(candidates) or t < candidates[i]:
-                return
-            
-            
             for ind in range(i,len(candidates)):
                 if candidates[ind] > t:
                     break
