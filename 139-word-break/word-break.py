@@ -21,5 +21,5 @@ class Solution:
                     return True
             memo[p] = False
             return False
-        
+        print(memo)
         return answer(0)
