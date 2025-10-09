@@ -6,6 +6,7 @@ class Solution:
         memo = {}
 
         def answer(p):
+            print(memo)
             if p == n:
                 return True
             if p in memo:
@@ -16,10 +17,13 @@ class Solution:
                     break
                 
                 word = s[p:i+1]
-                if word in wordDict and answer(i+1):
-                    memo[p] = True
-                    return True
+                if word in wordDict:
+                    ans = answer(i+1)
+                    if ans:
+                        memo[p] = True
+                        return True
+            
             memo[p] = False
             return False
-        print(memo)
+            
         return answer(0)
