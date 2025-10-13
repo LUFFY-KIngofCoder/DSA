@@ -33,7 +33,7 @@ class Solution:
         n = len(nums2)
         nge = [-1]*n
         for i in range(n-1,-1,-1):
-            while not st.isEmpty() and st.top() < nums2[i]:
+            while not st.isEmpty() and st.top() <= nums2[i]:
                 st.pop()
             if not st.isEmpty():
                 nge[i] = st.top()
