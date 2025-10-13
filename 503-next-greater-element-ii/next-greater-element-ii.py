@@ -27,7 +27,7 @@ class Solution:
     def nextGreaterElements(self, nums: List[int]) -> List[int]:
         st = Stack()
         n = len(nums)
-        nge = [0]*n
+        nge = [-1]*n
         # ind = nums.index(max(nums))
         # print(ind)
         for i in range(2*n-1,-1,-1):
@@ -35,9 +35,7 @@ class Solution:
             while not st.isEmpty() and st.top() <= nums[i]:
                 st.pop()
             print(st.isEmpty())
-            if st.isEmpty():
-                nge[i] = -1
-            else:
+            if not st.isEmpty():
                 nge[i] = st.top()
                 # print(st.top())
             st.push(nums[i])
