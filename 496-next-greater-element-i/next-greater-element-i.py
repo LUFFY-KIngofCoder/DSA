@@ -37,9 +37,12 @@ class Solution:
                 st.pop()
             if not st.isEmpty():
                 nge[i] = st.top()
+            # print(nge)
             st.push(nums2[i])
+            # print(st.arr[:n])
 
         ans = []
+        
         for i in nums1:
             ans.append(nge[nums2.index(i)])
         return ans
